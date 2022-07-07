@@ -9,9 +9,9 @@ class Category(models.Model):
 
 class Ingredients(models.Model):
     name = models.CharField(max_length=255)
-    notes = TextField(max_length=255)
+    notes = models.TextField(max_length=255)
 
-    category = models.ForeignKey(Category, related_names="ingredients", on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, related_name="ingredients", on_delete=models.CASCADE)
 
     def __str__ (self):
         return self.name
