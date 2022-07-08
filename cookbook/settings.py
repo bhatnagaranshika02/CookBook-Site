@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ingredients',
-    'graphene_django'
+    'graphene_django',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-bhatnagaran-cookbooksit-vy4yq3d36v3.ws-us51.gitpod.io",
 ]
 
 ROOT_URLCONF = 'cookbook.urls'
